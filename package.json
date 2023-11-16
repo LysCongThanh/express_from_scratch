@@ -5,15 +5,19 @@
   "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/App.js"
+    "start": "nodemon ./src/App.js"
   },
   "keywords": [
-    "nodejs"
+    "express from scratch"
   ],
   "author": "TDev",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
