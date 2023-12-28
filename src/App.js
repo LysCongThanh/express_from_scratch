@@ -1,9 +1,16 @@
-const express = require('express');
 require('dotenv').config();
-const path = require('path');
+const express = new require('express');
 const app = express();
+const path = require('path');
+const rootDir = process.cwd();
+const routes = require('./routes/web');
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.use(express.json());
+app.use('/public', express.static(path.join(rootDir, 'src/public')));
 
-app.listen(33, () => {});
+// Configuration
+require('./configs/viewsEngine')(app, path.join(rootDir, '/src'));
+
+app.use('/', routes);
+
+module.exports = app;
